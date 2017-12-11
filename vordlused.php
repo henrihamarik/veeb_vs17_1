@@ -61,3 +61,7 @@ echo 'a = '.$a.
 $s = '5';
 $s++;
 echo $s.'<br />';
+// konstandite defineerimine ja kasutamine
+define('NUMBER', 5); // defineerimine
+echo NUMBER.'<br />';
+//NUMBER++; - ei saa olla
