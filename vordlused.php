@@ -57,3 +57,7 @@ echo 'a = '.$a.
     '; b = '.$b.
     '; c = '.$c.
     '; d = '.$d.'<br />';
+// katsetame sõne suurendamist
+$s = '5';
+$s++;
+echo $s.'<br />';
