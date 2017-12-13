@@ -5,6 +5,7 @@
  * Date: 13.12.2017
  * Time: 14:54
  */
+header('Refresh: 1');
 for ($rida = 1; $rida <= 5; $rida++){
     $varv = '#';
     for($kord = 1; $kord <= 6; $kord++){
