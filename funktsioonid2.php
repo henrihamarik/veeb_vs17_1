@@ -27,5 +27,7 @@ function arvuSumma($number){
     }
     return $summa;
 }
-$number = 123;
-echo 'Numbri '.$number.' arvude summa on '.arvuSumma($number).'<br />';
+for ($kord = 1; $kord <= 5; $kord++){
+    $number = rand(0, 1000);
+    echo 'Numbri '.$number.' arvude summa on '.arvuSumma($number).'<br />';
+}
