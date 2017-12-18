@@ -21,11 +21,11 @@ function arvuSumma($number){
     $summa = 0;
     while($number != 0){
         $arv = $number % 10;
-        echo 'arv = '.$arv.'<br />';
+        $summa = $summa + $arv;
         $number = $number / 10;
-        echo 'number = '.$number.'<br />';
         settype($number, 'integer');
-        echo 'number = '.$number.'<br />';
     }
+    return $summa;
 }
-arvuSumma(1235);
+$number = 123;
+echo 'Numbri '.$number.' arvude summa on '.arvuSumma($number).'<br />';
