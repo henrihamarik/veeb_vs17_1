@@ -33,7 +33,8 @@ echo '<hr />';
 foreach ($arvud as $arv){
     echo '<i>'.$arv.'</i><br />';
 }
-
+echo '<hr />';
+echo '<h3>Ülesanded</h3>';
 /*
  * 1.
  * Koosta funktsioon nimega looMassiiv,
@@ -44,7 +45,19 @@ foreach ($arvud as $arv){
  * põhiprogrammile ja kontrollida sisu
  * testväljastuse abil - näiteks print_r
  * */
-
+function looMassiiv($elementideArv){
+    $massiiv = array();
+    for($i = 0; $i < $elementideArv; $i++){
+        $juhuarv = rand(100, 999);
+        $massiiv[] = $juhuarv;
+    }
+    return $massiiv;
+}
+$arvud = looMassiiv(10);
+echo '<pre>';
+print_r($arvud);
+echo '</pre>';
+echo '<hr />';
 /*
  * 2.
  * Loo funktsioon nimega valjastaMassiiv,
@@ -54,7 +67,18 @@ foreach ($arvud as $arv){
  * Väljundi loomisel kasutada foreach
  * tsükkel
  * */
+function valjastaMassiiv($massiiv){
+    echo '<table border="1">';
+    foreach ($massiiv as $element){
+        echo '<tr><td>';
+        echo $element;
+        echo '</td></tr>';
+    }
+    echo '</table>';
+}
 
+valjastaMassiiv($arvud);
+echo '<hr />';
 /*
  * 3.
  * Loo funktsioon nimega vahetaMinMax, mis võtab
@@ -67,7 +91,23 @@ foreach ($arvud as $arv){
  * Kontrolli kas kohad on vahetatud kasutades
  * valjastaMassiiv funktsiooni
 */
-
+function vahetaMinMax(&$massiiv){
+    $min = min($massiiv);
+    $max = max($massiiv);
+    echo 'min = '.$min.'<br />';
+    echo 'max = '.$max.'<br />';
+    for($i = 0; $i < count($massiiv); $i++){
+        if($massiiv[$i] == $min){
+            $massiiv[$i] = $max;
+        }
+        else if($massiiv[$i] == $max){
+            $massiiv[$i] = $min;
+        }
+    }
+}
+vahetaMinMax($arvud);
+valjastaMassiiv($arvud);
+echo '<hr />';
 /*
  * 4.
  * Loo funktsioon nimega elementideKorrutis, mis
@@ -79,7 +119,25 @@ foreach ($arvud as $arv){
  * Massiiv on 1, 0, 6, 0, 0, 3, 5
  * Tulemus: 1 * 6 * 5 = 30
 */
+function elementideKorrutis($massiiv){
+    $korrutis = 1;
+    $kord = 0;
+    echo 'Tulemus: ';
+    for($i = 0; $i < count($massiiv); $i++){
+        if($massiiv[$i] > 0 and $i % 2 == 0){
+            if($kord == 0){
+                echo $massiiv[$i];
+                $kord = 1;
+            } else {
+                echo ' * '.$massiiv[$i];
+            }
 
+            $korrutis = $korrutis * $massiiv[$i];
+        }
+    }
+    echo ' = '.$korrutis.'<br />';
+}
+elementideKorrutis(array(1, 0, 6, 0, 0, 3, 5));
 /*
  * 5.
  * Töötluses kasutada massiiv
@@ -92,3 +150,15 @@ foreach ($arvud as $arv){
  * tsükli abil, samuti EI SAA kasutada
  * grupeerimisfunktisoone ega muuta antud massiivi
  * */
+function mitteDubleeri($massiiv){
+    $valjasta = '';
+    foreach($massiiv as $element){
+        if($valjasta != $element){
+            $valjasta = $element;
+            echo $element.'&nbsp;';
+        }
+    }
+}
+mitteDubleeri(array(1, 1, 1, 2, 2, 2, 2, 3));
+echo '<hr />';
+echo '<br />';
