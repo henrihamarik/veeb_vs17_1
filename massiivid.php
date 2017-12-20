@@ -22,3 +22,14 @@ foreach ($arvud as $arv){
     echo '<i>'.$arv.'</i><br />';
 }
 
+$arvud[] = 6;
+echo '<hr />';
+foreach ($arvud as $arv){
+    echo '<i>'.$arv.'</i><br />';
+}
+
+$arvud[0] = 7;
+echo '<hr />';
+foreach ($arvud as $arv){
+    echo '<i>'.$arv.'</i><br />';
+}
