@@ -53,16 +53,19 @@ if (count($_POST) > 0) {
  * on sooritatud õige arvu leidmisel.
  * */
 $katseteArv = $_POST['katseteArv'];
+$serveriArv = $_POST['serveriArv'];
 $katseteArv = (isset($katseteArv)) ? ++$katseteArv : 0;
+$serveriArv = (isset($serveriArv)) ? $serveriArv : rand(1,50);
 echo 'Arva arv ära: <br />';
 echo '
     <form action="'.$_SERVER['PHP_SELF'].'" method="post">
         <input type="text" name="kasutajaArv">
         <input type="submit" value="Kontrolli!">
         <input type="hidden" name="katseteArv" value="'.$katseteArv.'">
+        <input type="hidden" name="serveriArv" value="'.$serveriArv.'">
     </form>
 ';
-$serveriArv = 35;
+//$serveriArv = 35;
 $kasutajaArv = $_POST['kasutajaArv'];
 if(strlen($kasutajaArv) > 0){
         if($kasutajaArv > $serveriArv){
