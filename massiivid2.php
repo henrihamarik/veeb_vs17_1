@@ -136,3 +136,37 @@ function otsi($raamatud, $seisund){
 echo '<pre>';
 print_r(otsi($raamatud, 'valjas'));
 echo '</pre>';
+
+function pealkiri($raamat){
+    $pealkiri = array_keys($raamat);
+    echo '<tr>';
+    foreach ($pealkiri as $element){
+        echo '<th>'.$element.'</th>';
+    }
+    echo '</tr>';
+}
+
+function valjasta($raamatud){
+    $pealkiriValjas = 0;
+    echo '<table border="1">';
+    foreach($raamatud as $raamat){
+        echo '<tr>';
+        if($pealkiriValjas == 0){
+            pealkiri($raamat);
+            $pealkiriValjas = 1;
+        }
+        foreach ($raamat as $info) {
+                echo '<td>' . $info . '</td>';
+        }
+        echo '</tr>';
+    }
+    echo '</table>';
+}
+
+valjasta($raamatud);
+
+echo '<hr />';
+
+valjasta(otsi($raamatud, 'valjas'));
+
+echo '<hr />';
