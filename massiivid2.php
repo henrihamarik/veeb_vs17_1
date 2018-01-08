@@ -76,7 +76,7 @@ echo '<hr />';
  *          'title' => 'raamat',
  *          'author' => 'autor',
  *          'print' => 'trükikoda',
- *          'status' => 'seisund]'
+ *          'status' => 'seisund'
  *      )
  * );
  * Loo funktsioon, mille parameetrina on raamatute
@@ -87,3 +87,36 @@ echo '<hr />';
  * väljastab tulemused tabeli kujul. Tabeli pealkirjaks
  * on massiivi võtmed
  * */
+
+$raamatud = array(
+    array(
+        'title' => 'Peppa Goes To London',
+        'author' => 'Ladybird',
+        'print' => 'Penguin',
+        'status' => 'valjas'
+    ),
+    array(
+        'title' => 'Toto, Joonas ja püha Mimoos',
+        'author' => 'Kristiina K.',
+        'print' => 'Heli Kirjastus OÜ',
+        'status' => 'sees'
+    ),
+    array(
+        'title' => 'Lugusid loomadest',
+        'author' => 'Ernest Thompson Seton',
+        'print' => 'Ernest Thompson Seton',
+        'status' => 'sees'
+    ),
+    array(
+        'title' => 'Miljon miksi ja miljon vastust',
+        'author' => '',
+        'print' => 'TEA Kirjastus',
+        'status' => 'sees'
+    ),
+    array(
+        'title' => 'Teadmiste Puu: Maailma Loodus',
+        'author' => 'AJ Wood, Mike Jolley',
+        'print' => 'Pikoprint',
+        'status' => 'valjas'
+    )
+);
