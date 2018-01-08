@@ -52,11 +52,14 @@ if (count($_POST) > 0) {
  * Täineda programmi selliselt, et on kirjas, mitu katset
  * on sooritatud õige arvu leidmisel.
  * */
+$katseteArv = $_POST['katseteArv'];
+$katseteArv = (isset($katseteArv)) ? ++$katseteArv : 0;
 echo 'Arva arv ära: <br />';
 echo '
     <form action="'.$_SERVER['PHP_SELF'].'" method="post">
         <input type="text" name="kasutajaArv">
         <input type="submit" value="Kontrolli!">
+        <input type="hidden" name="katseteArv" value="'.$katseteArv.'">
     </form>
 ';
 $serveriArv = 35;
@@ -71,9 +74,10 @@ if(strlen($kasutajaArv) > 0){
         if(abs($kasutajaArv - $serveriArv) <= 5){
             if($kasutajaArv == $serveriArv){
                 echo 'Õige! Väljamõeldud arv oli '.$serveriArv.'<br />';
+                echo 'Arvasid ära '.$katseteArv.' korraga<br />';
                 exit;
             }
             echo 'Aga oled juba väga lähedal õigele vastusele!<br />';
         }
-
+    $katseteArv++;
 }
