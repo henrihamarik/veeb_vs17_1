@@ -24,3 +24,20 @@ function raamatuVorm(){
         </form>
     ';
 }
+
+/*
+ * Koostame funktsiooni, mis salvestab vormiandmed faili
+ * */
+function salvestaRaamat($raamat, $failinimi){
+    if(file_exists($failinimi) and is_file($failinimi) and is_writable($failinimi)){
+        $fail = fopen($failinimi, 'a') or die('Probleem faili avamisega');
+        foreach ($raamat as $element){
+            fwrite($fail, $element."\n");
+        }
+        fwrite($fail, "----\n");
+        fclose($fail);
+        echo 'Andmed on sisestatud<br />';
+    } else {
+        echo 'Probleem failiga '.$failinimi.'<br />';
+    }
+}
