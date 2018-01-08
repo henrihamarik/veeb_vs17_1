@@ -5,7 +5,7 @@
  * Date: 8.01.2018
  * Time: 10:38
  */
-echo '
+/*echo '
     <form action="'.$_SERVER['PHP_SELF'].'" method="post">
         Kasutaja: <input type="text" name="kasutaja"><br />
         Parool: <input type="password" name="parool"><br />
@@ -33,7 +33,7 @@ if (count($_POST) > 0) {
 
     echo $_POST['kasutaja'] . '<br />';
     echo $_POST['parool'] . '<br />';
-}
+}*/
 /*
  * Koosta mäng, kus kasutaja saab ära arvata programmis mõeldud
  * täisarvu ühest viiekümneni. Skript peab
@@ -52,3 +52,28 @@ if (count($_POST) > 0) {
  * Täineda programmi selliselt, et on kirjas, mitu katset
  * on sooritatud õige arvu leidmisel.
  * */
+echo 'Arva arv ära: <br />';
+echo '
+    <form action="'.$_SERVER['PHP_SELF'].'" method="post">
+        <input type="text" name="kasutajaArv">
+        <input type="submit" value="Kontrolli!">
+    </form>
+';
+$serveriArv = 35;
+$kasutajaArv = $_POST['kasutajaArv'];
+if(strlen($kasutajaArv) > 0){
+        if($kasutajaArv > $serveriArv){
+            echo 'Sinu arv on suurem kui välja mõeldud<br />';
+        }
+        if($kasutajaArv < $serveriArv){
+            echo 'Sinu arv on väiksem kui välja mõeldud<br />';
+        }
+        if(abs($kasutajaArv - $serveriArv) <= 5){
+            if($kasutajaArv == $serveriArv){
+                echo 'Õige! Väljamõeldud arv oli '.$serveriArv.'<br />';
+                exit;
+            }
+            echo 'Aga oled juba väga lähedal õigele vastusele!<br />';
+        }
+
+}

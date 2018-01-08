@@ -85,7 +85,7 @@ echo '<hr />';
  * kas raamat on välja antud või mitte).
  * Loo funktsioon, mis võtab parameetrina massiivi, ja
  * väljastab tulemused tabeli kujul. Tabeli pealkirjaks
- * on massiivi võtmed
+ * on massiivi võtmed.
  * */
 
 $raamatud = array(
@@ -134,7 +134,7 @@ function otsi($raamatud, $seisund){
 }
 
 echo '<pre>';
-print_r(otsi($raamatud, 'valjas'));
+print_r(otsi($raamatud, 'sees'));
 echo '</pre>';
 
 function pealkiri($raamat){
