@@ -43,3 +43,9 @@ $opilased = array(
         'klass' => 10
     )
 );
+
+echo '<pre>';
+print_r($opilased);
+echo '</pre>';
+
+echo '<hr />';
