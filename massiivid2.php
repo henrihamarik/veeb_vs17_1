@@ -14,3 +14,9 @@ $opilane = array(
 echo '<pre>';
 print_r($opilane);
 echo '</pre>';
+
+echo '<hr />';
+
+foreach ($opilane as $voti => $vaartus){
+    echo $voti.' - '.$vaartus.'<br />';
+}
