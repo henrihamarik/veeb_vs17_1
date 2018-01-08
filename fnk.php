@@ -26,6 +26,24 @@ function raamatuVorm(){
 }
 
 /*
+ * Koostame funtksiooni, mis vormiandmed salvestab massiivi
+ * */
+function loeVormist(){
+    raamatuVorm();
+    $raamat = array();
+    if(count($_POST) > 0){
+        foreach ($_POST as $voti => $vaartus){
+            if(strlen($vaartus) == 0){
+                echo 'Kõik väljad peavad olema täidetud<br />';
+                exit;
+            }
+            $raamat[$voti] = $vaartus;
+        }
+    }
+    return $raamat;
+}
+
+/*
  * Koostame funktsiooni, mis salvestab vormiandmed faili
  * */
 function salvestaRaamat($raamat, $failinimi){

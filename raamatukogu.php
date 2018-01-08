@@ -7,13 +7,14 @@
  */
 require_once 'fnk.php';
 
-raamatuVorm();
+/*raamatuVorm();
 
 $raamat = array(
     'title' => 'Peppa Goes To London',
     'author' => 'Ladybird',
     'print' => 'Penguin',
     'status' => 'valjas'
-);
+);*/
+$raamat = loeVormist();
 salvestaRaamat($raamat, 'raamatud.txt');
 loeAndmed('raamatud.txt');
