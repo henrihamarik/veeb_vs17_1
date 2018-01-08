@@ -120,3 +120,19 @@ $raamatud = array(
         'status' => 'valjas'
     )
 );
+
+function otsi($raamatud, $seisund){
+    $leitud = array();
+    foreach ($raamatud as $raamat){
+        foreach ($raamat as $kirjeldus => $vaartus){
+            if($kirjeldus == 'status' and $vaartus == $seisund){
+                $leitud[] = $raamat;
+            }
+        }
+    }
+    return $leitud;
+}
+
+echo '<pre>';
+print_r(otsi($raamatud, 'valjas'));
+echo '</pre>';
